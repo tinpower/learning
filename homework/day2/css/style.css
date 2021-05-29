@@ -1,0 +1,108 @@
+/* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Header */
+.header {
+    background-color: blue;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Top navigation */
+.top-nav {
+    background-color: #022147;
+    height: 30px;
+}
+
+.top-nav ul {
+    float: left;
+}
+
+.top-nav li {
+    color: #fff;
+    display: inline;
+    line-height: 30px;
+    margin-right: 15px;
+}
+
+.top-nav li i {
+    color: yellow;
+    padding-right: 5px;
+}
+
+.top-nav button {
+    line-height: 30px;
+    float: left;
+    background-color: yellow;
+    color: #111;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    margin-left: 1000px;
+    font-weight: bold;
+}
+
+/* Logo */
+
+
+/* Navigation */
+.nav li {
+    display: inline;
+    margin: 15px;
+}
+
+.nav a:active {
+    color: orange;
+}
+
+/* Carousel */
+.carousel {
+    background-image: url(../img/2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    position: relative;
+}
+
+.carousel__content{
+    position: absolute;
+    top: 650px;
+}
+
+.carousel__item {
+    float: left;
+    width: 33%;
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carousel__item i {
+    color: #f7c82b;
+    font-size: 24px;
+}
+
+.carousel__mid {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.bottom__item button {
+    background-color: yellow;
+    color: #111;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
