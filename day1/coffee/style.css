@@ -1,0 +1,17 @@
+.header h1 {
+    color: white;
+    background-color: green;
+    text-align: center;
+}
+
+.nav {
+    width: auto;
+    height: 44px;
+    background-color: blue;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.nav a {
+    color: white;
+}
