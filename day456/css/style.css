@@ -43,7 +43,7 @@ header {
     transition: .5s all;
 }
 
-.header__content li:hover{
+.header__content li:hover {
     background-color: #e62b43;
 }
 
@@ -53,7 +53,7 @@ header {
 }
 
 /* CAROUSEL */
-.carousel{
+.carousel {
     height: 650px;
     background-image: url(../img/home_slider.jpg);
     background-size: cover;
@@ -65,7 +65,7 @@ header {
     align-items: center;
 }
 
-.carousel__content button{
+.carousel__content button {
     margin-top: 20px;
     padding: 10px 25px;
     border: 1px solid #e62b43;
@@ -75,7 +75,66 @@ header {
     cursor: pointer;
 }
 
-.carousel__content button:hover{
+.carousel__content button:hover {
     background-color: #af2239;
     border: 1px solid #af2239;
+}
+
+/* SERVICES */
+
+.services {
+    padding: 100px 0;
+    background-color: grey;
+    text-align: center;
+}
+
+.services__content {
+    width: 70%;
+    margin: 50px auto 0;
+}
+
+.services__slider .item {
+    background: white;
+    width: 214px;
+    height: 230px;
+    margin: 10px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.services__slider .item i{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.services__slider .slick-dots li button {
+    background-color: rgb(211, 211, 211);
+    border-radius: 50%;
+}
+
+.services__slider .slick-dots li button:before {
+    color: rgb(211, 211, 211);
+}
+
+.services__slider .slick-dots li:hover button {
+    background-color: white;
+    border-radius: 50%;
+    color: white;
+}
+
+.services__slider .slick-dots li:hover button:before {
+    color: white;
+}
+
+.services__slider .slick-dots li.slick-active button {
+    background-color: #af2239;
+    border-radius: 50px;
+}
+
+.services__slider .slick-dots li.slick-active button:before {
+    color: #af2239;
 }
