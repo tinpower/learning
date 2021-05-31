@@ -103,7 +103,23 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.services__slider .item::before{
+    content: '';
+    height: 0;
+    background-color: #af2239;
+    width: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.services__slider .item:hover::before{
+    height: 100%;
+    transition: all .5s;
 }
 
 .services__slider .item i{
@@ -137,4 +153,15 @@ header {
 
 .services__slider .slick-dots li.slick-active button:before {
     color: #af2239;
+}
+
+/* SHOWCASE */
+.showcase {
+    padding: 100px 0;
+    background-color: rgb(185, 185, 185);
+    text-align: center;
+}
+.showcase__content{
+    display: grid;
+    grid-template-columns: 33,33;
 }
