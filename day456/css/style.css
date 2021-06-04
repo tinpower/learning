@@ -172,6 +172,8 @@ header {
 
 .showcase__item {
     height: 408px;
+    position: relative;
+    overflow: hidden;
 }
 
 .showcase__item img {
@@ -181,7 +183,63 @@ header {
     filter: grayscale(100%) contrast(0.5);
 }
 
-.showcase__icon {
-    background: #fff;
+.showcase__overlay {
+    background-color: rgba(230, 43, 74, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .5s;
+}
 
+.showcase__item:hover .showcase__overlay{
+    opacity: 1;
+}
+
+.showcase__icon {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(50px);
+    transition: all .5s;
+}
+
+.showcase__item:hover .showcase__icon {
+    transform: translateY(0);
+}
+
+/* .showcase__icon i {
+    background-color: #fff;
+    padding: 10px;
+    color: #333;
+    margin-top: 10px;
+} */
+/* Old CSS */
+
+.showcase__text {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    transform: translateY(50px);
+    transition: all .5s;
+}
+
+.showcase__item:hover .showcase__text {
+    transform: translateY(0);
+}
+
+/* BLOG */
+
+.blog__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.blog__item img{
+    object-fit: cover;
 }
