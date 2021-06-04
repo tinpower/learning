@@ -270,6 +270,7 @@ header {
 .number{
     background-color: #111;
     padding: 100px 0;
+    height: 400px;
 }
 .number__content{
     display: flex;
@@ -279,16 +280,91 @@ header {
 }
 .number__item{
     color: #fff;
-    font-size: 24px;
+    font-size: 1.2rem;
     text-align: center;
+    font-weight: 400;
+    width: 25%;
 }
 
 .number__item p:first-child{
     color:fff;
     font-size: 4rem;
+    font-weight: 300;
 }
 
 .number__item p:last-child{
     color:rgb(185, 185, 185);
     text-transform: uppercase;
+}
+
+/* TRUSTED */
+.trusted__content{
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 750px;
+
+}
+.trusted__left {
+    width: 70%;
+    height: 650px;
+    position: absolute;
+    z-index: 1;
+    top: -15%;
+    left: 0;
+}
+
+.trusted__left img{
+    object-fit: cover;
+    filter: grayscale(100%) contrast(50%);
+    width: 100%;
+    height: 100%;
+}
+
+.trusted__right{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    padding: 60px;
+    background-color: #fff;
+}
+
+.trusted__item p:first-of-type {
+    font-size: 48px;
+}
+
+/* EXPERIENCE */
+.experience{
+    padding: 100px 0;
+    background-image: url(../img/bussiness_img_1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+
+.experience__content{
+    width: 70%;
+    margin: auto
+}
+
+.experience__content video, .experience__content iframe{
+    width: 100%;
+}
+
+/* CONTACT */
+.contact{
+    text-align: center;
+    padding: 100px;
+}
+.contact__content{
+    display: flex;
+}
+.contact__form{
+    
 }

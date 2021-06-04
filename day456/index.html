@@ -57,8 +57,6 @@
                 <i class="fa fa-angle-down"></i>
             </div>
         </div>
-
-
     </section>
     <!-- SERVICES -->
     <section class="services">
@@ -230,33 +228,80 @@
     <section class="number">
         <div class="number__content">
             <div class="number__item">
-                <p>8705</p>
+                <p class="counter">8705</p>
                 <p>Project Completed</p>
             </div>
             <div class="number__item">
-                <p>480</p>
+                <p class="counter">480</p>
                 <p>ACTIVE CLIENTS</p>
             </div>
             <div class="number__item">
-                <p>625</p>
+                <p class="counter">625</p>
                 <p>CUPS OF COFFEE</p>
             </div>
             <div class="number__item">
-                <p>9,774</p>
+                <p class="counter">9,774</p>
                 <p>HAPPY CLIENTS</p>
             </div>
         </div>
     </section>
     <!-- TRUSTED -->
     <section class="trusted">
-
+        <div class="trusted__content">
+            <div class="trusted__left">
+                <img src="./img/trusted__img_1.jpg" alt="trusted__img_1">
+            </div>
+            <div class="trusted__right">
+                <p>We are trusted by more than 8900 clients</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, quibusdam sint assumenda velit cumque ut
+                    asperiores provident delectus tempora nisi quas ullam eum quasi numquam enim, magni dolor, ipsa veniam!
+                </p>
+            </div>          
+        </div>
     </section>
     <!-- EXPERIENCE -->
     <section class="experience">
-
+        <div class="title">
+            <p>SERVICES WE ARE OFFERING</p>
+            <h2>WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES.</h2>
+            <p>We are committed to providing our customers with exceptional service while offering
+                our employees the best training.</p>
+        </div>
+        <div class="experience__content">
+            <video controls poster="./img/home_slider.jpg">
+                <source src="./img/video.mp4" type="video/mp4">
+            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/P8qEusQiwsw"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
     </section>
     <!-- CONTACT -->
-    <section class="contact"></section>
+    <section class="contact">
+        <div class="title">
+            <p>SERVICES WE ARE OFFERING</p>
+            <h2>WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES.</h2>
+            <p>We are committed to providing our customers with exceptional service while offering
+                our employees the best training.</p>
+        </div>
+        <div class="contact__content">
+            <div class="contact__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.9064829103463!2d106.65663045083616!3d10.818468361335565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529111aa89f9d%3A0xd8f09cc0aa1b27f3!2zQ-G6o25nIGjDoG5nIGtow7RuZyBRdeG7kWMgdOG6vyBUw6JuIFPGoW4gTmjhuqV0!5e0!3m2!1svi!2s!4v1622817048856!5m2!1svi!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact__form">
+                <form>
+                    <input type="text" placeholder="Name" id="fullName">
+                    <input type="email" name="" id="email" placeholder="email">
+                    <input type="tel" name="" id="" placeholder="Mobile">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <footer></footer>
     <!-- JAVASCRIPT -->
     <!-- JQuery -->
@@ -283,6 +328,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- COUNTUP -->
     <script src="./cdn/js/jquery.countup.min.js"></script>
+    <script>
+        $('.counter').countUp({
+            'time': 800,
+            'delay': 10
+        });
+    </script>
 </body>
 
 </html>
