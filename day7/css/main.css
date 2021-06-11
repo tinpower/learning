@@ -1,9 +1,81 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* GLOBAL */
 
 html, body{
     font-family: 'Hind', sans-serif;
+}
+
+/* CAROUSEL */
+#portCaptions .carousel-item{
+    height: 100vh;
+}
+
+#portCaptions .carousel-item img{
+    width: 100%;
+    height: 100%;
+}
+#portCaptions .carousel-indicators li{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(50, 214, 179);
+}
+
+#portCaptions .carousel-caption{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+/* HEADER RESPOSIVE */
+
+@media screen and (max-width: 991.98px){
+    header .navbar-toggler{
+        background-color: #35a22c;
+    }
+}
+
+/* WELCOME */
+
+.welcome__items .progress {
+    height: 6px;
+}
+
+.welcome__items .progress .progress-bar {
+background: linear-gradient(to right, #35a22c, #0ea8cf);
+}
+
+/* PROJECT */
+
+/* .project__content ul{
+    justify-content: center;
+} */
+
+/* AWARD */
+.award {
+    background-image: url(../img/memphis_3.png);
+    background-position: bottom left;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.award__left{
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: rgba(142, 142, 142, 0.25) 0px 6px 15px 0px;
+    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    color: #000;
 }
