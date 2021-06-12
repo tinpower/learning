@@ -1,125 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- GOOGLE FONT POPPINS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <!-- SLICK CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <header>
-        <div class="main__header">
-            <div class="header__left">
-                    <img src="./img/logo-2.png" alt="logo">
-            </div>
-            <div class="header__right">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Post Layout</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </nav>
-                <button class="btn">Get a quote</button>
-            </div>  
+      <div class="main__header">
+        <div class="header__left">
+          <img src="./img/logo-2.png" alt="logo" />
         </div>
+        <div class="header__right">
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Post Layout</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+          <button class="btn">Get a quote</button>
+        </div>
+      </div>
     </header>
     <section class="carousel">
-        <div class="carousel__content">
-            <div class="cc__left">
-                <h4>We are The Best</h4>
-                <h1>Freelance Product Designer Running </h1>
-            <p>We develop the relationships that underpin the next phase in your
-    organisation’s growth.
-            </p>
-<ul>
-    <li><i class="fa fa-check"></i>Master's degree in designing</li>
-    <li><i class="fa fa-check"></i>Outstanding mobile design</li>
-</ul>
-<button class="btn">Get Started</button>
-    
-            </div>
-            <div class="cc__right">
-                <img src="./img/pic3_1.png" alt="">
-                <div class="cc__right__overlay">
-                    <img src="./img/pic1.png" alt="pic1-png">
-                </div>
-            </div>
+      <div class="carousel__content">
+        <div class="cc__left">
+          <h4>We are The Best</h4>
+          <h1>Freelance Product Designer Running</h1>
+          <p>
+            We develop the relationships that underpin the next phase in your
+            organisation’s growth.
+          </p>
+          <ul>
+            <li><i class="fa fa-check"></i>Master's degree in designing</li>
+            <li><i class="fa fa-check"></i>Outstanding mobile design</li>
+          </ul>
+          <button class="btn">Get Started</button>
         </div>
+        <div class="cc__right">
+          <img src="./img/pic3_1.png" alt="" />
+          <div class="cc__right__overlay">
+            <img src="./img/pic1.png" alt="pic1-png" />
+          </div>
+        </div>
+      </div>
     </section>
     <section class="usp">
-        <div class="title">
-            <h4>What We Do Best</h4>
-            <h1>Our Digital Services</h1>
+      <div class="title">
+        <h4>What We Do Best</h4>
+        <h1>Our Digital Services</h1>
+      </div>
+      <div class="usp__content">
+        <div class="usp__item">
+          <div class="top__usp__item">
+            <img src="./img/pic1_3.jpg" alt="pic1_3_jpg" />
+          </div>
+          <div class="bottom__usb__item">
+            <h4>Web Development</h4>
+            <h6>
+              Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent
+              lacus magna, rhoncus quis magna quis.
+            </h6>
+          </div>
         </div>
-        <div class="usp__content">
-            <div class="usp__item">
-                <div class="top__usp__item">
-                    <img src="./img/pic1_3.jpg" alt="pic1_3_jpg">
-                </div>
-                <div class="bottom__usb__item">
-                    <h4>Web Development</h4>
-                    <h6>Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent lacus magna, rhoncus quis magna quis.</h6>
-                </div>
-            </div>
-            <div class="usp__item">
-                <div class="top__usp__item">
-                    <img src="./img/pic2_2.jpg" alt="pic2_2_jpg">
-                </div>
-                <div class="bottom__usb__item">
-                    <h4>Strategy & Research</h4>
-                    <h6>Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent lacus magna, rhoncus quis magna quis.</h6>
-                </div>
-            </div>
-            <div class="usp__item">
-                <div class="top__usp__item">
-                    <img src="./img/pic3_2.jpg" alt="pic3_2_jpg">
-                </div>
-                <div class="bottom__usb__item">
-                    <h4>Growth Tracking</h4>
-                    <h6>Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent lacus magna, rhoncus quis magna quis.</h6>
-                </div>
-            </div>
+        <div class="usp__item">
+          <div class="top__usp__item">
+            <img src="./img/pic2_2.jpg" alt="pic2_2_jpg" />
+          </div>
+          <div class="bottom__usb__item">
+            <h4>Strategy & Research</h4>
+            <h6>
+              Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent
+              lacus magna, rhoncus quis magna quis.
+            </h6>
+          </div>
         </div>
+        <div class="usp__item">
+          <div class="top__usp__item">
+            <img src="./img/pic3_2.jpg" alt="pic3_2_jpg" />
+          </div>
+          <div class="bottom__usb__item">
+            <h4>Growth Tracking</h4>
+            <h6>
+              Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent
+              lacus magna, rhoncus quis magna quis.
+            </h6>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="aboutUS">
-        <div class="aboutUS__content">
-            <div class="ac__left">
-                <img src="./img/pic1.jpg" alt="pic1_jpg">
-            </div>
-            <div class="ac__right">
-                <div class="title">
-                    <h4>What We Do Best</h4>
-                    <h1>Build Your Business Website Better</h1>
-                </div>
-                <h6>Proin laoreet leo vel enim gravida, at porttitor metus ultricies. Cras eu velit enim. Vivamus blandit, dolor ut aliquet rutrum, ex elit mattis sapien, non molestie felis neque et nulla. Sed euismod turpis id nibh suscipit semper. Pellentesque dapibus risus arcu.</h6>
-                <ul>
-                    <li><i class="fa fa-check"></i>We support programs that create advancement opportunities for people.</li>
-                    <li><i class="fa fa-check"></i>Get a view of events and trends. Be updated on our recent news.</li>
-                    <li><i class="fa fa-check"></i>Finally, it all comes down to people. Creating a winning team.</li>
-                    <li><i class="fa fa-check"></i>Get a view of events and trends. Be updated on our recent news.</li>
-                </ul>
-            </div>
+      <div class="aboutUS__content">
+        <div class="ac__left">
+          <img src="./img/pic1.jpg" alt="pic1_jpg" />
         </div>
+        <div class="ac__right">
+          <div class="title">
+            <h4>What We Do Best</h4>
+            <h1>Build Your Business Website Better</h1>
+          </div>
+          <h6>
+            Proin laoreet leo vel enim gravida, at porttitor metus ultricies.
+            Cras eu velit enim. Vivamus blandit, dolor ut aliquet rutrum, ex
+            elit mattis sapien, non molestie felis neque et nulla. Sed euismod
+            turpis id nibh suscipit semper. Pellentesque dapibus risus arcu.
+          </h6>
+          <ul>
+            <li>
+              <i class="fa fa-check"></i>We support programs that create
+              advancement opportunities for people.
+            </li>
+            <li>
+              <i class="fa fa-check"></i>Get a view of events and trends. Be
+              updated on our recent news.
+            </li>
+            <li>
+              <i class="fa fa-check"></i>Finally, it all comes down to people.
+              Creating a winning team.
+            </li>
+            <li>
+              <i class="fa fa-check"></i>Get a view of events and trends. Be
+              updated on our recent news.
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="number"></section>
-    <section class="features"></section>
-    <section class="portfolio"></section>
-    <section class="plan"></section>
+    <section class="number">
+      <div class="number__contents">
+        <div class="number__items">
+          <div class="number__icon">
+            <i class="fa fa-smile"></i>
+          </div>
+          <div class="number__content" style="text-align: center" ;>
+            <h1 class="counter" style="display: inline; color: #f55f8d">18</h1>
+            <h1 style="display: inline; color: #f55f8d">Ml</h1>
+            <p>Satisfied Clients</p>
+          </div>
+        </div>
+        <div class="number__items">
+          <div class="number__icon">
+            <i class="fa fa-desktop"></i>
+          </div>
+          <div class="number__content" style="text-align: center" ;>
+            <h1 class="counter" style="display: inline; color: #f55f8d">20</h1>
+            <h1 style="display: inline; color: #f55f8d">Ml</h1>
+            <p>Project Completed</p>
+          </div>
+        </div>
+        <div class="number__items">
+          <div class="number__icon">
+            <i class="fa fa-rocket"></i>
+          </div>
+          <div class="number__content" style="text-align: center" ;>
+            <h1 class="counter" style="display: inline; color: #f55f8d">30</h1>
+            <h1 style="display: inline; color: #f55f8d">Ml</h1>
+            <p>Project Lunched</p>
+          </div>
+        </div>
+        <div class="number__items">
+          <div class="number__icon">
+            <i class="fa fa-cogs"></i>
+          </div>
+          <div class="number__content" style="text-align: center" ;>
+            <h1 class="counter" style="display: inline; color: #f55f8d">50</h1>
+            <p>Years Completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feature">
+      <div class="feature__content">
+        <div class="feature__left">
+          <div class="title">
+            <h4>Our Features</h4>
+            <h1>Behind The Story Of Samar Agency</h1>
+          </div>
+          <div class="feature__bottom">
+            <div class="feature__item">
+              <div class="feature__icon">
+                <i class="fa fa-brain"></i>
+              </div>
+              <div class="feature__text">
+                <h4>Idea & Analysis Gathering</h4>
+                <p>
+                  Maecenas laoreet efficitur sagittis. Aliquam eleifend nisl
+                  leo, sit amet consequat augue.
+                </p>
+              </div>
+            </div>
+            <div class="feature__item" id="feature__different">
+              <div class="feature__icon">
+                <i class="fa fa-laptop-code"></i>
+              </div>
+              <div class="feature__text">
+                <h4>Design & Developing</h4>
+                <p>
+                  Maecenas laoreet efficitur sagittis. Aliquam eleifend nisl
+                  leo, sit amet consequat augue.
+                </p>
+              </div>
+            </div>
+            <div class="feature__item">
+              <div class="feature__icon">
+                <i class="fa fa-rocket"></i>
+              </div>
+              <div class="feature__text">
+                <h4>Testing & Lunching</h4>
+                <p>
+                  Maecenas laoreet efficitur sagittis. Aliquam eleifend nisl
+                  leo, sit amet consequat augue.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature__right">
+          <img src="./img/pic3.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="title" style="text-align: center">
+        <h4>Portfolio</h4>
+        <h1>Our Latest Work</h1>
+      </div>
+      <div class="portfolio__content">
+        <div class="port__top">
+          <div class="port__top__left">
+            <a
+              href="./img/pic1_2.jpg"
+              data-fancybox="gallery"
+              data-caption="Caption #1"
+            >
+              <img src="./img/pic1_2.jpg" alt=""
+            /></a>
+          </div>
+          <div class="port__top__right">
+            <a
+              href="./img/pic2_1.jpg"
+              data-fancybox="gallery"
+              data-caption="Caption #2"
+            >
+              <img src="./img/pic2_1.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="port__bottom">
+          <div class="port__bot__left">
+            <div class="port__bot__top">
+              <a
+                href="./img/pic3_1.jpg"
+                data-fancybox="gallery"
+                data-caption="Caption #1"
+              >
+                <img src="./img/pic3_1.jpg" alt="" style="padding-right: 15px"
+              /></a>
+              <a
+                href="./img/pic4.jpg"
+                data-fancybox="gallery"
+                data-caption="Caption #1"
+              >
+                <img src="./img/pic4.jpg" alt="" style="padding-left: 15px"
+              /></a>
+            </div>
+            <div class="port__bot__bot">
+              <a
+                href="./img/pic5.jpg"
+                data-fancybox="gallery"
+                data-caption="Caption #1"
+              >
+                <img src="./img/pic5.jpg" alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="port__bot__right">
+            <a
+              href="./img/pic6.jpg"
+              data-fancybox="gallery"
+              data-caption="Caption #2"
+            >
+              <img src="./img/pic6.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="plan">
+      <div class="title" style="text-align: center">
+        <h4>Portfolio</h4>
+        <h1>Our Latest Work</h1>
+      </div>
+      <div class="plan__content">
+        <div class="slide__option"></div>
+        <div class="plan__option">
+          <div class="plan__item">
+            <h3>Basic Plan</h3>
+            <span>$49</span>
+            <p>/Month</p>
+            <hr />
+            <ul>
+              <li>Graphic Design</li>
+              <li>Web Design</li>
+              <li>UX/UI</li>
+              <li>HTML/CSS</li>
+              <li>SEO Marketing</li>
+              <li>Business Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="clientComment"></section>
     <section class="blog"></section>
-</body>
-
+    <a href="#" class="backToTop text-replace js-cd-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- JAVASCRIPT -->
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- SLICK JS -->
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script>
+      $(".services__slider").slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1200,
+      });
+    </script>
+    <!-- FANCYBOX JS -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- WAYPOINT -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+      integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- COUNTUP -->
+    <script src="./cdn/js/jquery.countup.min.js"></script>
+    <script>
+      $(".counter").countUp({
+        time: 2400,
+        delay: 10,
+      });
+    </script>
+    <!-- backToTop -->
+    <script src="./cdn/js/main.js"></script>
+    <script src="./cdn/js/util.js"></script>
+  </body>
 </html>
