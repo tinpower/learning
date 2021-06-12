@@ -435,9 +435,29 @@ h6 {
 
 .plan__option {
   display: flex;
+  justify-content: space-evenly;
 }
 
-.plan__item {
+.plan__item__wrap{
   padding: 30px;
   background-color: #fff;
+  border-radius: 10px;
+  width: 30%;
+  padding: 35px 60px;
+  box-shadow: 1px 0 50px rgb(0 0 0 / 10%);
+}
+
+.plan__item{
+  text-align: center;
+}
+
+.price__item{
+  color: #f8ae56;
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+
+.feature__price__item{
+  border-top: 1px solid #636363;
 }
