@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="homework">
+        <div class="title">
+          <h1>Đề bài</h1>
+          <h3 style="margin-top: 10px;">Nhập 5 số bất kỳ để tính trung bình cộng</h3>
+        </div>
+        <hr />
+        <div class="form-content">
+          <form>
+            <div class="number">
+              <label>Nhập số đầu tiên: </label>
+              <input type="text" id="number-1" placeholder="Nhập số ..." />
+            </div>
+            <div class="number">
+              <label>Nhập số thứ 2: </label>
+              <input type="text" id="number-2" placeholder="Nhập số ..." />
+            </div>
+            <div class="number">
+              <label>Nhập số thứ 3: </label>
+              <input type="text" id="number-3" placeholder="Nhập số ..." />
+            </div>
+            <div class="number">
+              <label>Nhập số thứ 4: </label>
+              <input type="text" id="number-4" placeholder="Nhập số ..." />
+            </div>
+            <div class="number">
+              <label>Nhập số thứ 5: </label>
+              <input type="text" id="number-5" placeholder="Nhập số ..." />
+            </div>
+            
+            <button type="reset" id="delete">Xoá số</button>
+          </form>
+          <button onclick="resultSum5()">Kết quả</button>
+          <h1>Kết quả là:</h1> <h1 style="font-size: 64px; margin-top: 10px;" id="showResult"></h1>
+        </div>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
