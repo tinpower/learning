@@ -30,8 +30,8 @@ function changeCurency() {
 // BAI TAP 3 - BONUS
 
 function resultChoiceCurency() {
-  let choiceVND = document.getElementById('choiceVND').checked;
-  let choiceUSD = document.getElementById('choiceUSD').checked;
+  let choiceVND = document.getElementById("choiceVND").checked;
+  let choiceUSD = document.getElementById("choiceUSD").checked;
   let result;
 
   if (choiceVND) {
@@ -50,12 +50,42 @@ function changeCurency2Unit() {
   switch (resultChoiceCurency()) {
     case "choiceVND":
       valueExchange2Unit = valueMoney / 23500;
-      document.getElementById('showMoney').innerHTML = "$" + new Intl.NumberFormat('en-US').format(valueExchange2Unit); 
+      document.getElementById("showMoney").innerHTML =
+        "$" + new Intl.NumberFormat("en-US").format(valueExchange2Unit);
       break;
     case "choiceUSD":
       valueExchange2Unit = valueMoney * 23000;
-      document.getElementById('showMoney').innerHTML = "đ" + new Intl.NumberFormat('vi-VN').format(valueExchange2Unit); 
+      document.getElementById("showMoney").innerHTML =
+        "đ" + new Intl.NumberFormat("vi-VN").format(valueExchange2Unit);
       break;
   }
   // document.getElementById('showMoney').innerHTML = valueExchange2Unit
+}
+
+// BAI TAP 4
+
+let valuePerimeter = 0;
+let valueWidth = document.getElementById("width").value;
+    valueWidth = parseFloat(valueWidth);
+let valueLength = document.getElementById("length").value;
+    valueLength = parseFloat(valueLength);
+
+function resultPerimeter() {
+  // METHOD
+  if (valueWidth > valueLength){
+    document.getElementById('showResultRectangle').innerHTML = "Vui lòng điền chiều dài lớn hơn chiều rộng";
+  } else {
+    valuePerimeter = (valueWidth + valueLength) * 2;
+    document.getElementById('showResultRectangle').innerHTML = "Chu vi hình chữ nhật là: " + valuePerimeter;
+  }
+}
+
+function resultAcgreage() {
+  // METHOD
+  if (valueWidth > valueLength){
+    document.getElementById('showResultRectangle').innerHTML = "Vui lòng điền chiều dài lớn hơn chiều rộng";
+  } else {
+    valueAcgreage = valueWidth * valueLength;
+    document.getElementById('showResultRectangle').innerHTML = "Diện tích hình chữ nhật là: " + valueAcgreage;
+  }
 }

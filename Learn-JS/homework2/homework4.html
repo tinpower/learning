@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="homework">
+        <div class="title">
+          <h1>Đề bài</h1>
+          <h3 style="margin-top: 10px">
+            Tính chu vi và diện tích hình chữ nhật
+          </h3>
+        </div>
+        <hr />
+        <div class="form-content">
+          <form>
+            <div class="rectangle">
+              <label>Nhập chiều dài: </label>
+              <input type="text" id="length" placeholder="Nhập số ..." />
+            </div>
+            <div class="rectangle">
+              <label>Nhập chiều rộng: </label>
+              <input type="text" id="width" placeholder="Nhập số ..." />
+            </div>
+          </form>
+          <button onclick="resultPerimeter()">Chu vi</button>
+          <button onclick="resultAcgreage()">Diện tích</button>
+          <div class="result">
+            <h1>Kết quả là:</h1>
+            <span
+              style="font-size: 44px; margin-top: 10px"
+              id="showResultRectangle"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
