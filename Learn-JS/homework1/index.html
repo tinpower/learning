@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <form>
+        <h1>Form</h1>
+        <label>Chon Loai xe:</label>
+        <div class="typeVehicles">
+          <input
+            type="radio"
+            name="typeVehicle"
+            id="motorbike"
+            onclick="radioChoice()"
+          />
+          <label>Xe Gan May</label>
+        </div>
+        <div class="typeVehicles">
+          <input
+            type="radio"
+            name="typeVehicle"
+            id="car"
+            onclick="radioChoice()"
+          />
+          <label>Xe Hoi</label>
+        </div>
+        <div class="typeVehicles">
+          <input
+            type="radio"
+            name="typeVehicle"
+            id="truck"
+            onclick="radioChoice()"
+          />
+          <label>Xe tai</label>
+        </div>
+        <label>Nhap So KM:</label>
+        <div class="fillTextBox">
+          <input
+            type="text"
+            name="fillKM"
+            id="fillKM"
+            placeholder="Nhap so km ..."
+          />
+        </div>
+        <label>Nhap thoi gian cho:</label>
+        <div class="fillTextBox">
+          <input
+            type="text"
+            name="fillWT"
+            id="fillWaitingTime"
+            placeholder="Nhap thoi gian cho ..."
+          />
+        </div>
+        <button id="moneyMethods" onclick="moneyMethod()">Tinh tien</button>
+        <span>THanh tien: <h2 id="showMoney"></h2></span>
+      </form>
+    </section>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>
