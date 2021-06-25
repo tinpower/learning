@@ -1,3 +1,17 @@
+// BAI TAP 1
+function calEmployee() {
+  let days = document.getElementById("daysEmployee").value;
+  days = parseInt(days);
+  let salaryOneDay = 100000;
+  if (days < 1) {
+    document.getElementById("showMessage").innerHTML = "Khỏi nhận lương. Thanks"
+  } else if (days > 1){
+    salaryEmloyee = days * salaryOneDay;
+    document.getElementById("showMessage").innerHTML = "đ" + new Intl.NumberFormat("vi-VN").format(salaryEmloyee);
+  }
+  document.getElementById("backToHome").style.display = "block";
+}
+
 // BAI TAP 2
 
 function resultSum5() {
@@ -15,6 +29,7 @@ function resultSum5() {
   sum = (num1 + num2 + num3 + num4 + num5) / 5;
   // console.log(sum);
   document.getElementById("showResult").innerHTML = sum;
+  document.getElementById("backToHome").style.display = "block";
 }
 
 // BAI TAP 3
@@ -24,7 +39,8 @@ function changeCurency() {
   valueUSD = parseFloat(valueUSD);
   let valueExchange = 0;
   valueExchange = valueUSD * 23500;
-  document.getElementById("showVND").innerHTML = valueExchange + "VND";
+  document.getElementById("showVND").innerHTML = "đ" + new Intl.NumberFormat("vi-VN").format(valueExchange);
+  document.getElementById("backToHome").style.display = "block";
 }
 
 // BAI TAP 3 - BONUS
@@ -59,6 +75,7 @@ function changeCurency2Unit() {
         "đ" + new Intl.NumberFormat("vi-VN").format(valueExchange2Unit);
       break;
   }
+  document.getElementById("backToHome").style.display = "block";
   // document.getElementById('showMoney').innerHTML = valueExchange2Unit
 }
 
@@ -76,11 +93,12 @@ function resultPerimeter() {
   if (valueWidth > valueLength) {
     document.getElementById("showResultRectangle").innerHTML =
       "Vui lòng điền chiều dài lớn hơn chiều rộng";
-  } else {
+  } else if (valueWidth < valueLength) {
     valuePerimeter = (valueWidth + valueLength) * 2;
     document.getElementById("showResultRectangle").innerHTML =
       "Chu vi hình chữ nhật là: " + valuePerimeter;
   }
+  document.getElementById("backToHome").style.display = "block";
 }
 
 function resultAcgreage() {
@@ -93,6 +111,7 @@ function resultAcgreage() {
     document.getElementById("showResultRectangle").innerHTML =
       "Diện tích hình chữ nhật là: " + valueAcgreage;
   }
+  document.getElementById("backToHome").style.display = "block";
 }
 
 function result2Unit() {
@@ -102,12 +121,21 @@ function result2Unit() {
   let numberUnit = number2Unit % 10;
   let numberTen = number2Unit / 10;
   numberTen = Math.floor(numberTen);
-  if (9 < number2Unit < 100) {
-    total2Unit = numberTen + numberUnit;
-    document.getElementById('showResult2Unit').innerHTML = "Ký số hàng chục là " + numberTen + "<br />" + "Ký số hàng đơn vị là " + numberUnit + "<br />" + "Tổng 2 ký số là " + total2Unit;
-  } else if ( number2Unit < 9) {
-    document.getElementById('showResult2Unit').innerHTML = "Vui lòng nhập số lớn hơn 9 và nhỏ hơn 100"
-  } else if (number2Unit > 100){
-    document.getElementById('showResult2Unit').innerHTML = "Vui lòng nhập số lớn hơn 9 và nhỏ hơn 100" 
+  if (number2Unit < 10 || number2Unit > 99) {
+    document.getElementById("showResult2Unit").innerHTML =
+      "Vui lòng nhập số lớn hơn 9 và nhỏ hơn 100";
   }
+  else {
+    total2Unit = numberTen + numberUnit;
+    document.getElementById("showResult2Unit").innerHTML =
+      "Ký số hàng chục là " +
+      numberTen +
+      "<br />" +
+      "Ký số hàng đơn vị là " +
+      numberUnit +
+      "<br />" +
+      "Tổng 2 ký số là " +
+      total2Unit;
+  } 
+  document.getElementById("backToHome").style.display = "block";
 }
