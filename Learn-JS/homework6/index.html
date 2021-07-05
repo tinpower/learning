@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="area">
+      <h1>Chọn khu vực</h1>
+      <label>Khu vực A (+2)</label>
+      <input type="radio" name="priorityArea" id="priorityAreaA" />
+      <label>Khu vực B (+1)</label>
+      <input type="radio" name="priorityArea" id="priorityAreaB" />
+      <label>Khu vực C (+0.5)</label>
+      <input type="radio" name="priorityArea" id="priorityAreaC" />
+      <label>Không có khu vực ưu tiên</label>
+      <input type="radio" name="priorityArea" id="priorityAreaD" />
+    </div>
+    <div class="user">
+      <h1>Chọn Đối tượng</h1>
+      <label>Đối tượng 1 (+2.5)</label>
+      <input type="radio" name="priorityPoint" id="priorityPoint1" />
+      <label>Đối tượng 2 (+1.5)</label>
+      <input type="radio" name="priorityPoint" id="priorityPoint2" />
+      <label>Đối tượng 3 (+1)</label>
+      <input type="radio" name="priorityPoint" id="priorityPoint3" />
+      <label>Đối tượng không có ưu tiên</label>
+      <input type="radio" name="priorityPoint" id="priorityPoint4" />
+    </div>
+    <div class="point">
+      <h1>Chọn đối tượng ưu tiên</h1>
+      <label style="display: block; margin: 5px 0">Điểm môn thứ 1</label>
+      <input type="text" placeholder="Diem Mot" id="score1" />
+      <label style="display: block; margin: 5px 0">Điểm môn thứ 2</label>
+      <input type="text" placeholder="Diem Hai" id="score2" />
+      <label style="display: block; margin: 5px 0">Điểm môn thứ 3</label>
+      <input type="text" placeholder="Diem Ba" id="score3" />
+    </div>
+    <button style="display: block; margin: 15px 0" onclick="passExam()">
+      Tính điểm
+    </button>
+    <h1 id="showMessage"></h1>
+    <script src="./main.js"></script>
+  </body>
+</html>
