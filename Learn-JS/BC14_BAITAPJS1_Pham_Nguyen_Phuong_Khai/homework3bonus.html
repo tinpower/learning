@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="homework">
+        <div class="title">
+          <h1>Đề bài</h1>
+          <h3 style="margin-top: 10px">Quy đổi tiền giữa USD <-> VNĐ</h3>
+        </div>
+        <hr />
+        <div class="form-content">
+          <form>
+            <div class="curency">
+              <h3>Chọn loại tiền cần đổi:</h3>
+              <div class="radio-button">
+                <div class="vndExchange">
+                  <input type="radio" name="curency" id="choiceVND" />
+                  <label>VND</label>
+                </div>
+                <div class="usdExchange">
+                  <input type="radio" name="curency" id="choiceUSD" />
+                  <label>USD</label>
+                </div>
+              </div>
+              <h3>Nhập số tiền cần đổi:</h3>
+              <input type="text" id="money" placeholder="Nhập số tiền..." />
+            </div>
+          </form>
+          <button onclick="changeCurency2Unit()">Đổi tiền</button>
+          <h2>Số tiền quy đổi:</h2><span><h2 style="font-size: 44px; margin-top: 10px" id="showMoney"></h2></span>
+          <a href="./index.html" class="back" id="backToHome">Back</a>
+        </div>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

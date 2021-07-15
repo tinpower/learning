@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="homework">
+        <div class="title">
+          <h1>Đề bài</h1>
+          <h3 style="margin-top: 10px">
+            Nhập số hàng chục bất kì để tính tổng 2 ký số
+          </h3>
+        </div>
+        <hr />
+        <div class="form-content">
+          <form>
+            <div class="number2Unit">
+              <label style="margin-bottom: 10px; font-weight: 600;">Nhập số hàng chục (10 < 99)</label>
+              <input type="text" id="ten" placeholder="Nhập số ..." />
+            </div>
+          </form>
+          <button onclick="result2Unit()">Chu vi</button>
+          <div class="result">
+            <h2>Kết quả là:</h2>
+            <h2 id="showResult2Unit"></h2>
+          </div>
+          <a href="./index.html" class="back" id="backToHome">Back</a>
+        </div>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

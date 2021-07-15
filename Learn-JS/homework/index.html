@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <section class="homework">
-      <div class="title">
-        <h2>Home Work 1</h2>
-        <form id="fm1">
-
-          <input
-            type="text"
-            name="day"
-            id="day"
-            value=""
-            placeholder="Nhap ngay cong"
-          />
-        </form>
-        <button onclick="salaryMethod()">Tinh Luong</button>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="day" id="fillDays" />
+          <label>Số ngày đi làm</label>
+        </div>
+        <div class="radio-box">
+          <label>Tăng ca: </label>
+          <input type="radio" name="typeRadio" id="radio-yes" onclick="radioChoice()"/>
+          <label>Có</label>
+          <input type="radio" name="typeRadio" id="radio-no" onclick="radioChoice()"/>
+          <label>Không</label>
+        </div>
+        <button onclick="salaryMethod()">Tính lương</button>
         <p id="showSalary"></p>
-      </div>
-    </section>
-    <script src="./js/index.js"></script>
+      </form>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
