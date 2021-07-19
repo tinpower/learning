@@ -105,11 +105,24 @@ question10();
 // Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
 console.log("------------------Bài tập 8------------------");
 const question8 = () => {
-  let valueNumber = [-128, 6, 8, -123, -50, -1, 2, 3, 4, 8, 100, 234];
-  for (let i = 2; i < valueNumber.length; i++) {
-    if (valueNumber[i] % valueNumber[i] == 1) {
+  let valueNumber = [-128, 6, 8, -123, -50, -1, 2, 4, 3, 5, 8, 100, 234];
+  let sNT;
+  let numArr;
+  for (let i = 0; i < valueNumber.length; i++) {
+    if (0 < valueNumber[i]) {
       console.log(valueNumber[i])
+      return valueNumber[i]
     }
+  }
+  console.log(numArr)
+  if (2 == numArr) {
+    console.log(`Số nguyên tố đầu tiên trong mảng là 2`);
+  }
+  if (numArr % numArr == 0) {
+    sNT.push(numArr);
+    console.log(`Số nguyên tố đầu tiên trong mảng là ${sNT.shift()}`);
+  } else {
+    console.log(-1);
   }
 };
 question8();
