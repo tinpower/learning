@@ -19,13 +19,13 @@ const NhanVien = function (
 };
 
 NhanVien.prototype.calCSalary = () => {
-  if (this.position === "Sếp") {
+  if (this.position == "Sếp") {
     return this.salary * 3 * this.workHour;
   }
-  if (this.position === "Trưởng phòng") {
+  if (this.position == "Trưởng phòng") {
     return this.salary * 2 * this.workHour;
   }
-  if (this.position === "Nhân viên") {
+  if (this.position == "Nhân viên") {
     return this.salary * this.workHour;
   }
 };
@@ -52,27 +52,27 @@ const getNhanVien = () => {
     position,
     workHour
   );
-  console.log(nhanVien);
   listNhanVien.push(nhanVien);
-  showNhanVien();
+  showTable();
 };
 
-const showNhanVien = () => {
+const showTable = () => {
   let tableDanhSach = document.getElementById("tableDanhSach");
   let html = "";
   for (let i = 0; i < listNhanVien.length; i++) {
+    let nv = listNhanVien[i];
     html += `
     <tr>
-      <td>${listNhanVien[i].username}</td>
-      <td>${listNhanVien[i].name}</td>
-      <td>${listNhanVien[i].email}</td>
-      <td>${listNhanVien[i].date}</td>
-      <td>${listNhanVien[i].position}</td>
-      <td>${listNhanVien[i].calCSalary()}</td>
-      <td>${listNhanVien[i].workHour}</td>
+      <td>${nv.username}</td>
+      <td>${nv.name}</td>
+      <td>${nv.email}</td>
+      <td>${nv.date}</td>
+      <td>${nv.position}</td>
+      <td>${nv.calCSalary()}</td>
+      <td>${nv.workHour}</td>
       <td>
       <button class="btn btn-primary">Cập nhật</button>
-      <button class="btn btn-danger">Xóa</button>
+      <button class="btn btn-danger" data-username="${nv.username}">Xóa</button>
       </td>
     </tr>
     `;
@@ -80,4 +80,13 @@ const showNhanVien = () => {
   tableDanhSach.innerHTML = html;
 };
 
+const delegation = (event) => {
+  let username = event.target.getAttribute("data-username");
+  listNhanVien = listNhanVien.filter(function (nv) {
+    return nv.username !== username;
+  });
+  showTable();
+};
+
+document.getElementById("tableDanhSach").addEventListener("click", delegation);
 document.getElementById("btnThemNV").addEventListener("click", getNhanVien);
