@@ -12,6 +12,8 @@ const getDataNhanVien = (dataNhanVien) => {
   document.getElementById("gioLam").value = dataNhanVien.workHour || "";
 };
 
+let manageNhanVien = new ManageNhanVien();
+
 // Reset form
 const resetForm = () => {
   getDataNhanVien({});
@@ -39,9 +41,8 @@ const addNhanVien = () => {
     position,
     workHour
   );
-  listNhanVien.push(nhanVien);
-  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
-  showTable(listNhanVien);
+  manageNhanVien.addNhanVien(nhanVien);
+  showTable(manageNhanVien.listNhanVien);
   resetForm();
   closeModalAdd();
 };
@@ -68,26 +69,15 @@ const updateNhanVien = () => {
     workHour
   );
 
-  listNhanVien = listNhanVien.map(function (value) {
-    if (value.username === username) {
-      return nhanVien;
-    }
-    return value;
-  });
-  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
-  showTable(listNhanVien);
+  manageNhanVien.updateNhanVien(nhanVien);
+  showTable(manageNhanVien.listNhanVien);
   resetForm();
   closeModalUpdate();
 };
 
 const searchNhanVien = () => {
   let search = document.getElementById("searchName").value;
-  let newListNhanVien = listNhanVien.filter(function (value) {
-    return (
-      value.rank().toLowerCase().trim().indexOf(search.toLowerCase().trim()) !==
-      -1
-    );
-  });
+  let newListNhanVien = manageNhanVien.searchNhanVien(search);
   showTable(newListNhanVien);
 };
 
@@ -106,9 +96,7 @@ const delegation = (event) => {
 
 // Select
 const returnDataNhanVien = (username) => {
-  let dataNhanVien = listNhanVien.find(function (value) {
-    return value.username === username;
-  });
+  let dataNhanVien = manageNhanVien.selectNhanVien(username);
   document.getElementById("tknv").disabled = true;
   document.getElementById("btnThemNV").disabled = true;
   getDataNhanVien(dataNhanVien);
@@ -116,11 +104,8 @@ const returnDataNhanVien = (username) => {
 
 // Delete
 const deleteNhanVien = (username) => {
-  listNhanVien = listNhanVien.filter(function (value) {
-    return value.username !== username;
-  });
-  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
-  showTable(listNhanVien);
+  manageNhanVien.deleteNhanVien(username);
+  showTable(manageNhanVien.listNhanVien);
 };
 
 // Show Table
@@ -152,7 +137,10 @@ const showTable = (listNhanVien) => {
   tableDanhSach.innerHTML = html;
 };
 
-const startApp = () => {
+manageNhanVien.startApp();
+showTable(manageNhanVien.listNhanVien);
+
+/* const startApp = () => {
   if (listNhanVien.length === 0) {
     return;
   }
@@ -170,7 +158,7 @@ const startApp = () => {
   });
   showTable(listNhanVien);
 };
-startApp();
+startApp(); */
 
 // Close modal
 const closeModalAdd = () => {
