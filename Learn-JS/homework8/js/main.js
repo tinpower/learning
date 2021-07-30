@@ -106,12 +106,12 @@ question10();
 console.log("------------------Bài tập 8------------------");
 const question8 = () => {
   let valueNumber = [-128, 6, 8, -123, -50, -1, 2, 4, 3, 5, 8, 100, 234];
-  let sNT;
+  let sNT = [];
   let numArr;
   for (let i = 0; i < valueNumber.length; i++) {
     if (0 < valueNumber[i]) {
       console.log(valueNumber[i])
-      return valueNumber[i]
+      return numArr = valueNumber[i]
     }
   }
   console.log(numArr)

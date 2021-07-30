@@ -98,7 +98,11 @@ function capNhatSinhVien() {
   });
 
   hienThi();
+<<<<<<< HEAD
   resetForm();
+=======
+  resetForm()
+>>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
 }
 
 function hienThi() {
@@ -131,7 +135,11 @@ function hienThi() {
 
 function resetForm() {
   updateForm({});
+<<<<<<< HEAD
   document.getElementById("txtMaSV").disabled = false;
+=======
+  document.getElementById("txtMaSV").disabled = false
+>>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
 }
 
 function updateForm(sinhVien) {
