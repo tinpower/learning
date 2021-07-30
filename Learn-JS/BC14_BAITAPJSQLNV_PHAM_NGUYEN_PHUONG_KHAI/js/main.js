@@ -1,3 +1,4 @@
+// Object constructor
 const NhanVien = function (
   username,
   name,
@@ -18,7 +19,6 @@ const NhanVien = function (
   this.workHour = workHour;
 };
 
-<<<<<<< HEAD
 NhanVien.prototype.calCSalary = function () {
   if (this.position === "Sếp") {
     return new Intl.NumberFormat("vn-VN", {
@@ -37,17 +37,6 @@ NhanVien.prototype.calCSalary = function () {
       style: "currency",
       currency: "VND",
     }).format(this.salary * this.workHour);
-=======
-NhanVien.prototype.calCSalary = () => {
-  if (this.position == "Sếp") {
-    return this.salary * 3 * this.workHour;
-  }
-  if (this.position == "Trưởng phòng") {
-    return this.salary * 2 * this.workHour;
-  }
-  if (this.position == "Nhân viên") {
-    return this.salary * this.workHour;
->>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
   }
 };
 
@@ -67,7 +56,7 @@ NhanVien.prototype.rank = function () {
 };
 
 // Array Global
-let listNhanVien = [];
+let listNhanVien = JSON.parse(localStorage.getItem("listNhanVien")) || [];
 
 const getDataNhanVien = (dataNhanVien) => {
   document.getElementById("tknv").value = dataNhanVien.username || "";
@@ -86,7 +75,7 @@ const resetForm = () => {
   document.getElementById("tknv").disabled = false;
 };
 
-// Get data
+// Add
 const addNhanVien = () => {
   let username = document.getElementById("tknv").value;
   let name = document.getElementById("name").value;
@@ -108,7 +97,7 @@ const addNhanVien = () => {
     workHour
   );
   listNhanVien.push(nhanVien);
-<<<<<<< HEAD
+  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
   showTable(listNhanVien);
   resetForm();
   closeModalAdd();
@@ -142,7 +131,7 @@ const updateNhanVien = () => {
     }
     return value;
   });
-
+  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
   showTable(listNhanVien);
   resetForm();
   closeModalUpdate();
@@ -178,6 +167,7 @@ const returnDataNhanVien = (username) => {
     return value.username === username;
   });
   document.getElementById("tknv").disabled = true;
+  document.getElementById("btnThemNV").disabled = true;
   getDataNhanVien(dataNhanVien);
 };
 
@@ -186,24 +176,18 @@ const deleteNhanVien = (username) => {
   listNhanVien = listNhanVien.filter(function (value) {
     return value.username !== username;
   });
+  localStorage.setItem("listNhanVien", JSON.stringify(listNhanVien));
   showTable(listNhanVien);
 };
 
 // Show Table
 const showTable = (listNhanVien) => {
-=======
-  showTable();
-};
-
-const showTable = () => {
->>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
   let tableDanhSach = document.getElementById("tableDanhSach");
   let html = "";
   for (let i = 0; i < listNhanVien.length; i++) {
     let nv = listNhanVien[i];
     html += `
     <tr>
-<<<<<<< HEAD
       <td>${listNhanVien[i].username}</td>
       <td>${listNhanVien[i].name}</td>
       <td>${listNhanVien[i].email}</td>
@@ -218,18 +202,6 @@ const showTable = () => {
       <button class="btn btn-danger" data-action="delete" data-username="${
         listNhanVien[i].username
       }">Xóa</button>
-=======
-      <td>${nv.username}</td>
-      <td>${nv.name}</td>
-      <td>${nv.email}</td>
-      <td>${nv.date}</td>
-      <td>${nv.position}</td>
-      <td>${nv.calCSalary()}</td>
-      <td>${nv.workHour}</td>
-      <td>
-      <button class="btn btn-primary">Cập nhật</button>
-      <button class="btn btn-danger" data-username="${nv.username}">Xóa</button>
->>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
       </td>
     </tr>
     `;
@@ -237,7 +209,26 @@ const showTable = () => {
   tableDanhSach.innerHTML = html;
 };
 
-<<<<<<< HEAD
+const startApp = () => {
+  if (listNhanVien.length === 0) {
+    return;
+  }
+  listNhanVien = listNhanVien.map(function (value) {
+    return new NhanVien(
+      value.username,
+      value.name,
+      value.email,
+      value.password,
+      value.date,
+      value.salary,
+      value.position,
+      value.workHour
+    );
+  });
+  showTable(listNhanVien);
+};
+startApp();
+
 // Close modal
 const closeModalAdd = () => {
   document.getElementById("btnThemNV").setAttribute("data-toggle", "modal");
@@ -254,15 +245,3 @@ document.getElementById("tableDanhSach").addEventListener("click", delegation);
 document.getElementById("btnThemNV").addEventListener("click", addNhanVien);
 document.getElementById("btnCapNhat").addEventListener("click", updateNhanVien);
 document.getElementById("btnTimNV").addEventListener("click", searchNhanVien);
-=======
-const delegation = (event) => {
-  let username = event.target.getAttribute("data-username");
-  listNhanVien = listNhanVien.filter(function (nv) {
-    return nv.username !== username;
-  });
-  showTable();
-};
-
-document.getElementById("tableDanhSach").addEventListener("click", delegation);
-document.getElementById("btnThemNV").addEventListener("click", getNhanVien);
->>>>>>> 5ba2d2da0245f2dbe58313586991c0e7467d5f96
