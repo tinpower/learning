@@ -86,7 +86,6 @@ const addNhanVien = () => {
   manageNhanVien.addNhanVien(nhanVien);
   showTable(manageNhanVien.listNhanVien);
   resetForm();
-  closeModalAdd();
 };
 
 // Update
@@ -99,7 +98,6 @@ const updateNhanVien = () => {
   let salary = +document.getElementById("luongCB").value;
   let position = document.getElementById("chucvu").value;
   let workHour = +document.getElementById("gioLam").value;
-
   let nhanVien = new NhanVien(
     username,
     name,
@@ -117,7 +115,6 @@ const updateNhanVien = () => {
   manageNhanVien.updateNhanVien(nhanVien);
   showTable(manageNhanVien.listNhanVien);
   resetForm();
-  closeModalUpdate();
 };
 
 const searchNhanVien = () => {
@@ -143,7 +140,7 @@ const delegation = (event) => {
 const returnDataNhanVien = (username) => {
   let dataNhanVien = manageNhanVien.selectNhanVien(username);
   document.getElementById("tknv").disabled = true;
-  document.getElementById("btnThemNV").disabled = true;
+  // document.getElementById("btnThemNV").disabled = true;
   getDataNhanVien(dataNhanVien);
 };
 
@@ -158,7 +155,6 @@ const showTable = (listNhanVien) => {
   let tableDanhSach = document.getElementById("tableDanhSach");
   let html = "";
   for (let i = 0; i < listNhanVien.length; i++) {
-    let nv = listNhanVien[i];
     html += `
     <tr>
       <td>${listNhanVien[i].username}</td>
@@ -184,37 +180,6 @@ const showTable = (listNhanVien) => {
 
 manageNhanVien.startApp();
 showTable(manageNhanVien.listNhanVien);
-
-/* const startApp = () => {
-  if (listNhanVien.length === 0) {
-    return;
-  }
-  listNhanVien = listNhanVien.map(function (value) {
-    return new NhanVien(
-      value.username,
-      value.name,
-      value.email,
-      value.password,
-      value.date,
-      value.salary,
-      value.position,
-      value.workHour
-    );
-  });
-  showTable(listNhanVien);
-};
-startApp(); */
-
-// Close modal
-const closeModalAdd = () => {
-  document.getElementById("btnThemNV").setAttribute("data-toggle", "modal");
-  document.getElementById("btnThemNV").setAttribute("data-target", "#myModal");
-};
-
-const closeModalUpdate = () => {
-  document.getElementById("btnCapNhat").setAttribute("data-toggle", "modal");
-  document.getElementById("btnCapNhat").setAttribute("data-target", "#myModal");
-};
 
 // DOM
 document.getElementById("tableDanhSach").addEventListener("click", delegation);
