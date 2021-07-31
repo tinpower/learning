@@ -14,10 +14,35 @@ const getDataNhanVien = (dataNhanVien) => {
 
 let manageNhanVien = new ManageNhanVien();
 
+// Auth
+const auth = (nhanVien) => {
+  let validator = new Validator();
+  let isValid = validator.isRequired("tbTKNV", nhanVien.username);
+  isValid &= validator.isRequired("tbTen", nhanVien.name);
+  isValid &= validator.isRequired("tbEmail", nhanVien.email);
+  isValid &= validator.isRequired("tbMatKhau", nhanVien.password);
+  isValid &= validator.isRequired("tbNgay", nhanVien.date);
+  isValid &= validator.isRequired("tbLuongCB", nhanVien.salary);
+  isValid &= validator.isRequired("tbChucVu", nhanVien.position);
+  isValid &= validator.isRequired("tbGiolam", nhanVien.workHour);
+
+  if (!isValid) {
+    for (let key in validator.errors) {
+      if (validator.errors[key]) {
+        document.getElementById(key).style.display = "block";
+        document.getElementById(key).innerHTML = validator.errors[key];
+      }
+    }
+    return false;
+  }
+  return true;
+};
+
 // Reset form
 const resetForm = () => {
   getDataNhanVien({});
   document.getElementById("tknv").disabled = false;
+  document.getElementsByClassName("sp-thongbao").style.display = "none";
 };
 
 // Add
@@ -41,6 +66,12 @@ const addNhanVien = () => {
     position,
     workHour
   );
+
+  let isValid = auth(nhanVien);
+  if (!isValid) {
+    return;
+  }
+
   manageNhanVien.addNhanVien(nhanVien);
   showTable(manageNhanVien.listNhanVien);
   resetForm();
@@ -68,7 +99,10 @@ const updateNhanVien = () => {
     position,
     workHour
   );
-
+  let isValid = auth(nhanVien);
+  if (!isValid) {
+    return;
+  }
   manageNhanVien.updateNhanVien(nhanVien);
   showTable(manageNhanVien.listNhanVien);
   resetForm();
