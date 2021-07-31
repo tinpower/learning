@@ -83,7 +83,6 @@ const addNhanVien = () => {
   if (!isValid) {
     return;
   }
-
   manageNhanVien.addNhanVien(nhanVien);
   showTable(manageNhanVien.listNhanVien);
   resetForm();
