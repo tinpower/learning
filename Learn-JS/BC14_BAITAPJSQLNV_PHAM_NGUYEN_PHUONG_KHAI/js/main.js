@@ -17,14 +17,26 @@ let manageNhanVien = new ManageNhanVien();
 // Auth
 const auth = (nhanVien) => {
   let validator = new Validator();
-  let isValid = validator.isRequired("tbTKNV", nhanVien.username);
-  isValid &= validator.isRequired("tbTen", nhanVien.name);
-  isValid &= validator.isRequired("tbEmail", nhanVien.email);
-  isValid &= validator.isRequired("tbMatKhau", nhanVien.password);
+  let isValid =
+    validator.isRequired("tbTKNV", nhanVien.username) &&
+    validator.usrCheck("tbTKNV", nhanVien.username);
+  isValid &=
+    validator.isRequired("tbTen", nhanVien.name) &&
+    validator.nameCheck("tbTen", nhanVien.name);
+  isValid &=
+    validator.isRequired("tbEmail", nhanVien.email) &&
+    validator.emailCheck("tbEmail", nhanVien.email);
+  isValid &=
+    validator.isRequired("tbMatKhau", nhanVien.password) &&
+    validator.pwdCheck("tbMatKhau", nhanVien.password);
   isValid &= validator.isRequired("tbNgay", nhanVien.date);
-  isValid &= validator.isRequired("tbLuongCB", nhanVien.salary);
+  isValid &=
+    validator.isRequired("tbLuongCB", nhanVien.salary) &&
+    validator.salaryCheck("tbLuongCB", nhanVien.salary);
   isValid &= validator.isRequired("tbChucVu", nhanVien.position);
-  isValid &= validator.isRequired("tbGiolam", nhanVien.workHour);
+  isValid &=
+    validator.isRequired("tbGiolam", nhanVien.workHour) &&
+    validator.workHourCheck("tbGiolam", nhanVien.workHour);
 
   if (!isValid) {
     for (let key in validator.errors) {
