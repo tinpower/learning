@@ -1,4 +1,4 @@
-export default class Food {
+class Food {
   constructor(
     _id,
     _tenMon,
@@ -20,6 +20,8 @@ export default class Food {
     this.tinhTrang = _tinhTrang;
   }
   tinhGiaKhuyenMai() {
-    return (this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100));
+    this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100);
   }
 }
+
+export default Food;

@@ -5,7 +5,7 @@ const getEle = (id) => document.getElementById(id);
 
 // Khởi tạo đối tượng listFood từ lớp đối tượng
 const listFood = new ListFood();
-
+// const addFoodList = new AddFood();
 // Hàm render
 const renderHTML = (arr) => {
   let html = "";
@@ -49,7 +49,8 @@ const addFood = () => {
     _moTa,
     _tinhTrang
   );
-  let _giaKhuyenMai = food.tinhGiaKhuyenMai();
+  food.tinhGiaKhuyenMai();
+  console.log(food);
   axios.post("https://61111686c38a0900171f0fe6.mockapi.io/Food", {
     tenMon: _tenMon,
     loaiMon: _loaiMon,

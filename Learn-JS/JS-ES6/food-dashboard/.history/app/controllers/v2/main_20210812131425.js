@@ -17,10 +17,9 @@ const renderHTML = (arr) => {
       <td><img src="./../../assets/img/${item.hinhMon}"></td>
       <td>${item.loaiMon === "loai1" ? "Chay" : "Mặn"}</td>
       <td>${item.giaMon}</td>
-      <td>${item.khuyenMai + "%"}</td>
+      <td>${item.khuyenMai}</td>
       <td>${item.giaKhuyenMai}</td>
       <td>${item.tinhTrang === "0" ? "Hết" : "Còn"}</td>
-      <td><button class="btn btn-success mr-2">Sửa</button><button class="btn btn-danger">Xóa</button></td>
     </tr>`;
   });
   getEle("tbodyFood").innerHTML = html;
@@ -38,31 +37,54 @@ const addFood = () => {
     _hinhMon = getEle("hinhMon").files[0].name;
   }
   const _moTa = getEle("moTa").value;
+
   // Khởi tạo đối tượng food từ lớp đối tượng food
   const food = new Food(
     "",
     _tenMon,
-    _hinhMon,
     _loaiMon,
     _giaMon,
     _khuyenMai,
     _moTa,
-    _tinhTrang
+    _tinhTrang,
+    _hinhMon
   );
-  let _giaKhuyenMai = food.tinhGiaKhuyenMai();
-  axios.post("https://61111686c38a0900171f0fe6.mockapi.io/Food", {
-    tenMon: _tenMon,
-    loaiMon: _loaiMon,
-    giaMon: _giaMon,
-    khuyenMai: _khuyenMai,
-    moTa: _moTa,
-    tinhTrang: _tinhTrang,
-    hinhMon: _hinhMon,
-    giaKhuyenMai: _giaKhuyenMai,
-  });
+  food.tinhGiaKhuyenMai();
+  const addHTML = (food) => {
+    let html = "";
+    food.forEach((item) => {
+      html += `
+      <tr>
+        <td>${item.id}</td>
+        <td>${item.tenMon}</td>
+        <td><img src="./../../assets/img/${item.hinhMon}"></td>
+        <td>${item.loaiMon === "loai1" ? "Chay" : "Mặn"}</td>
+        <td>${item.giaMon}</td>
+        <td>${item.khuyenMai}</td>
+        <td>${item.giaKhuyenMai}</td>
+        <td>${item.tinhTrang === "0" ? "Hết" : "Còn"}</td>
+      </tr>`;
+    });
+    getEle("tbodyFood").innerHTML = html;
+  };
 };
 // Khai báo hàm addFood với đối tượng Window
 window.addFood = addFood;
+
+// Hàm lấy danh sách món ăn
+const fetchData = () => {
+  listFood
+    .getListFoodApi()
+    .postListFoodApi()
+    .then((result) => {
+      renderHTML(result.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+fetchData();
 
 getEle("btnThem").addEventListener("click", () => {
   document.getElementsByClassName(
@@ -73,17 +95,3 @@ getEle("btnThem").addEventListener("click", () => {
   `;
   document.getElementsByClassName("modal-footer")[0].innerHTML = footer;
 });
-
-// Hàm lấy danh sách món ăn
-const fetchData = () => {
-  listFood
-    .getListFoodApi()
-    .then((result) => {
-      renderHTML(result.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-fetchData();

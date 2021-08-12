@@ -1,11 +1,12 @@
 import ListFood from "./../../models/v2/ListFood.js";
+import AddFood from "./../../models/v2/AddFood.js";
 import Food from "./../../models/v2/Food.js";
 
 const getEle = (id) => document.getElementById(id);
 
 // Khởi tạo đối tượng listFood từ lớp đối tượng
 const listFood = new ListFood();
-
+const addFoodList = new AddFood();
 // Hàm render
 const renderHTML = (arr) => {
   let html = "";
@@ -20,7 +21,6 @@ const renderHTML = (arr) => {
       <td>${item.khuyenMai + "%"}</td>
       <td>${item.giaKhuyenMai}</td>
       <td>${item.tinhTrang === "0" ? "Hết" : "Còn"}</td>
-      <td><button class="btn btn-success mr-2">Sửa</button><button class="btn btn-danger">Xóa</button></td>
     </tr>`;
   });
   getEle("tbodyFood").innerHTML = html;
@@ -38,28 +38,20 @@ const addFood = () => {
     _hinhMon = getEle("hinhMon").files[0].name;
   }
   const _moTa = getEle("moTa").value;
+
   // Khởi tạo đối tượng food từ lớp đối tượng food
   const food = new Food(
     "",
     _tenMon,
-    _hinhMon,
     _loaiMon,
     _giaMon,
     _khuyenMai,
     _moTa,
-    _tinhTrang
+    _tinhTrang,
+    _hinhMon
   );
-  let _giaKhuyenMai = food.tinhGiaKhuyenMai();
-  axios.post("https://61111686c38a0900171f0fe6.mockapi.io/Food", {
-    tenMon: _tenMon,
-    loaiMon: _loaiMon,
-    giaMon: _giaMon,
-    khuyenMai: _khuyenMai,
-    moTa: _moTa,
-    tinhTrang: _tinhTrang,
-    hinhMon: _hinhMon,
-    giaKhuyenMai: _giaKhuyenMai,
-  });
+  food.tinhGiaKhuyenMai();
+  console.log(food);
 };
 // Khai báo hàm addFood với đối tượng Window
 window.addFood = addFood;
@@ -81,9 +73,16 @@ const fetchData = () => {
     .then((result) => {
       renderHTML(result.data);
     })
+    .postListFoodApi()
+    .then((result) => {
+      addFood(result.data);
+    })
     .catch((error) => {
       console.log(error);
     });
+  addFoodList.postListFoodApi().then((result) => {
+    addFood(result);
+  });
 };
 
 fetchData();

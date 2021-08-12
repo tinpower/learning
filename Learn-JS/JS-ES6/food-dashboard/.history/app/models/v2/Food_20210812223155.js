@@ -20,6 +20,6 @@ export default class Food {
     this.tinhTrang = _tinhTrang;
   }
   tinhGiaKhuyenMai() {
-    return (this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100));
+    this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100);
   }
 }

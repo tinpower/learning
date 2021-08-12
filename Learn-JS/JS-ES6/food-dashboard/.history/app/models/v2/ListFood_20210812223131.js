@@ -1,4 +1,4 @@
-export default class ListFood {
+class ListFood {
   getListFoodApi() {
     return axios({
       url: "https://61111686c38a0900171f0fe6.mockapi.io/Food",
@@ -6,3 +6,4 @@ export default class ListFood {
     });
   }
 }
+export default ListFood;
