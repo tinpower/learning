@@ -37,7 +37,6 @@ const addFood = () => {
   if (getEle("hinhMon").files.length > 0) {
     _hinhMon = getEle("hinhMon").files[0].name;
   }
-  let _giaKhuyenMai = 0;
   const _moTa = getEle("moTa").value;
   // Khởi tạo đối tượng food từ lớp đối tượng food
   const food = new Food(

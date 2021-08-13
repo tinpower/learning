@@ -7,7 +7,6 @@ export default class Food {
     _khuyenMai,
     _tinhTrang,
     _hinhMon,
-    _giaKhuyenMai,
     _moTa
   ) {
     this.id = _id;

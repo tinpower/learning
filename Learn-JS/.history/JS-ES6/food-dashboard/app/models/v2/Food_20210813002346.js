@@ -7,7 +7,6 @@ export default class Food {
     _khuyenMai,
     _tinhTrang,
     _hinhMon,
-    _giaKhuyenMai,
     _moTa
   ) {
     this.id = _id;
@@ -21,6 +20,6 @@ export default class Food {
     this.tinhTrang = _tinhTrang;
   }
   tinhGiaKhuyenMai() {
-    this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100);
+    return (this.giaKhuyenMai = this.giaMon * ((100 - this.khuyenMai) / 100));
   }
 }
